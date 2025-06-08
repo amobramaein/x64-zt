@@ -104,13 +104,13 @@ namespace zonetool::h1
 		utils::hook::jump(0x14029F229, utils::hook::assemble(load_proto_stub), true);
 		utils::hook::jump(0x14029EF8D, utils::hook::assemble(load_proto_unknown_stub), true);
 
-		reallocate_asset_pool<ASSET_TYPE_LOCALIZE_ENTRY, 15000>();
+		reallocate_asset_pool<ASSET_TYPE_LOCALIZE_ENTRY, 150000>();
 
-		const auto* image_pool = reallocate_asset_pool<ASSET_TYPE_IMAGE, 30000>();
+		const auto* image_pool = reallocate_asset_pool<ASSET_TYPE_IMAGE, 300000>();
 		utils::hook::inject(0x1402BBAA5, image_pool + 8);
 		utils::hook::inject(0x1402BBAC3, image_pool + 8);
 
-		const auto* material_pool = reallocate_asset_pool<ASSET_TYPE_MATERIAL, 18000>();
+		const auto* material_pool = reallocate_asset_pool<ASSET_TYPE_MATERIAL, 180000>();
 		utils::hook::inject(0x1402BBB02 + 3, material_pool + 8);
 		utils::hook::inject(0x1402BBB20 + 3, material_pool + 8);
 		utils::hook::inject(0x1402BBB6F + 3, material_pool + 8);
